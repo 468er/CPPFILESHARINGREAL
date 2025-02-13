@@ -1,0 +1,15 @@
+Charles Babbage
+9165551234
+iHeart@computers.com
+Inventor
+9165556789
+serious@mail.com
+Ada Lovelace
+9168675309
+iProgram@computers.net
+Programmer
+9165554321
+moreSerious@mail.com
+Julia Child
+French
+2
