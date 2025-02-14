@@ -27,24 +27,46 @@ int main(){
     codes['{'] = '}';
     
     codes['<'] = '>';
+    int Points = 0;
     std::map<char, char> reverseCodes;
     for(auto& pair : codes){
         reverseCodes[pair.second] = pair.first;
     }
+    std::map<char, int> PointCodes;
+    PointCodes[codes.begin()->second] = 3;
+    std::map<char, int>::iterator TestVar = PointCodes.begin();
+    TestVar++;
+    PointCodes[(TestVar)->second] = 57;
+    TestVar++;
+    PointCodes[(TestVar)->second] = 1197;
+    TestVar++;
+    PointCodes[(TestVar)->second] = 25137;
     
     for(int a = 0; a < chars.size(); a++){
-       /* for(int b = 0; b < chars[a].size(); b++){
-         
-        std::vector<char> chunk;
-        if(codes[chars[a][b]] != NULL){
-            chunk.push_back(chars[a][b]);
+        std::vector<std::string> chars2(0);
+        auto charsa = chars[a];
+        std::cout << "a called" << a << " " << charsa << std::endl;
+        for(int b = 0; b < charsa.size(); b++){
+         std::cout << "b called" << b << std::endl;
+          std::vector<char> chunk(0);
+        chunk.push_back('(');
+        if(codes[charsa[b]] != NULL){
+            chunk.push_back(charsa[b]);
         }
-        else if(reverseCodes[ chars[a][b]] ==chunk[chunk.size() - 1] ){
+        else if(reverseCodes[ charsa[b]] ==chunk[chunk.size() - 1] ){
             chunk.pop_back();
         }
-        else if(reverseCodes[ chars[a][b]] != NULL && reverseCodes[ chars[a][b]] != chunk[chunk.size() - 1]){
-            
+        else if(reverseCodes[ charsa[b]] != NULL && reverseCodes[ charsa[b]] != chunk[chunk.size() - 1]){
+
+            a++;
+            if( a < chars.size()){
+                b = 0; 
+            }
+            Points += PointCodes[charsa[b]];
         }
-        }*/
+        
+        }
+        chars2.push_back(charsa);
     }
+    std::cout << Points << std::endl;
 }
