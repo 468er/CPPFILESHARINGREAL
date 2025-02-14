@@ -66,10 +66,3 @@ class Stack {
         }
      }
 };
-int main(){
-    Stack<int>* TS = new Stack<int>();
-    TS->push(1);
-    TS->push(2);
-    TS->push(3);
-    std::cout << TS->max() << std::endl;
-}
